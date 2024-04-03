@@ -4,9 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div>
-        test
-      </div>
+      <Link href={'./login-register'}>Click me to login or register!!</Link>
     </main>
   );
 }

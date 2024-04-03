@@ -13,7 +13,6 @@ export default function RegisterForm() {
         password: formData.get('password'),
       }),
     });
-    console.log({ response });
   };
   return (
     <form
