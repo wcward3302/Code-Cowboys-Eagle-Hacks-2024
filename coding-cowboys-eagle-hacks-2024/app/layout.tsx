@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Coding Cowboys",
-  description: "",
+  description: "Coding Cowboys Team Project for Eagle Hacks 2024",
 };
 
 export default async function RootLayout({
@@ -21,9 +21,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav>
+        <nav className="navbar">
           {!!session && <Logout />}
-          {!session && <Link href="/login">Login</Link>}
+          {!session && <Link href="/login-register">Login</Link>}
           { <Link href="/dashboard">Dashboard</Link>}
         </nav>
         {children}
