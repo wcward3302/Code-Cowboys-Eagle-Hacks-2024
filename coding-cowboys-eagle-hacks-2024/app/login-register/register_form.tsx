@@ -17,17 +17,19 @@ export default function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 mx-auto max-w-md mt-10"
+      className="flex flex-col gap-2 mx-auto max-w-md mt-10 outline-black outline-double outline-offset-8 outline-1"
     >
       <input
         name="email"
         className="border border-black text-black"
         type="email"
+        placeholder='Email'
       />
       <input
         name="password"
         className="border border-black  text-black"
         type="password"
+        placeholder='Password'
       />
       <button type="submit">Register</button>
     </form>

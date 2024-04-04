@@ -17,7 +17,9 @@
     "react": "^18",
     "react-dom": "^18",
     "react-toastify": "^10.0.5",
-    "vercel": "^33.6.2"
+    "use-debounce": "^10.0.0",
+    "vercel": "^33.6.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

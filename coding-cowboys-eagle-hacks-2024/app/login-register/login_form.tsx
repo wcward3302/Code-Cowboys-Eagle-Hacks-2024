@@ -28,7 +28,7 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 mx-auto max-w-md mt-10"
+      className="flex flex-col gap-2 mx-auto max-w-md mt-10 outline-black outline-double outline-offset-8 outline-1"
     >
       <input
         name="email"
