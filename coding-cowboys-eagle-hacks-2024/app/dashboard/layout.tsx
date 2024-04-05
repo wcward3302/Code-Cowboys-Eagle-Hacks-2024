@@ -1,4 +1,6 @@
 import SideNavBar from "../ui/dashboard/sidenavbar";
+import ChatButton from "./chatButton/page";
+import ChatBox from "./chatbox/page";
 
 export default function Layout({ children }: { children: React.ReactNode}) {
     return (
@@ -7,6 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode}) {
                 <SideNavBar />
             </div>
             <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+            <ChatButton/>
         </div>
     );
 }

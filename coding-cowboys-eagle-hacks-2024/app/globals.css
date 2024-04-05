@@ -12,3 +12,10 @@ body {
   width: auto;
   height: 100%;
 }
+
+.showChat {
+  position: fixed; /* or absolute */
+  right: 5%; /* Distance from the right */
+  bottom: 5%; /* Distance from the bottom */
+  padding: 10px;
+}
