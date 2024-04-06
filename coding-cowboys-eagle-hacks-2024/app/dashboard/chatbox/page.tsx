@@ -1,4 +1,7 @@
 "use client";
+import api_stuff from "@/app/lib/apifunctions";
+import html_stuff from "@/app/lib/htmlfunctions";
+import OpenAI from "openai";
 import { useState } from "react";
 
 export default function ChatBox() {
@@ -19,7 +22,6 @@ export default function ChatBox() {
     temp.push({ role: "user", content: theInput });
     setMessages(temp);
     setTheInput("");
-    console.log("Calling OpenAI...");
 
     const response = await fetch("/api/openAI", {
       method: "POST",
@@ -32,10 +34,18 @@ export default function ChatBox() {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.content);
 
     const Indexterm = output.content.indexOf("banana");
     output.content = Indexterm !== -1 ? output.content.substring(0, Indexterm) : output.content;
+
+    if (Indexterm !== -1){
+      var sql_insert = await api_stuff('sql', output.content)
+
+      console.log(sql_insert)
+
+      var html_content = await api_stuff('html', output.content)
+      html_stuff(html_content)
+    }
 
     setMessages((prevMessages) => [...prevMessages, output]);
     setIsLoading(false);
@@ -47,6 +57,7 @@ export default function ChatBox() {
       callGetResponse();
     }
   };
+  
 
   return (
     <div>
