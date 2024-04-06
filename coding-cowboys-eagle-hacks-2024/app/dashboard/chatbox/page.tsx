@@ -10,6 +10,7 @@ export default function ChatBox() {
       content: "Hello, feel free to ask me to create an invoice or add, modify, or delete information!",
     },
   ]);
+ 
   // below this
 
   const callGetResponse = async () => {
@@ -32,6 +33,9 @@ export default function ChatBox() {
     const data = await response.json();
     const { output } = data;
     console.log("OpenAI replied...", output.content);
+
+    const Indexterm = output.content.indexOf("banana");
+    output.content = Indexterm !== -1 ? output.content.substring(0, Indexterm) : output.content;
 
     setMessages((prevMessages) => [...prevMessages, output]);
     setIsLoading(false);
