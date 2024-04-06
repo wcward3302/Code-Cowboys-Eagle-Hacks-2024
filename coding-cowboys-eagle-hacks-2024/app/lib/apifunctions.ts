@@ -99,9 +99,8 @@ const api_stuff = async function api_call_function(needs: any, message_string: a
     }
   
     const openai = new OpenAI({
-        apiKey: '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',
-        dangerouslyAllowBrowser: true 
-      });
+      apiKey: process.env.OPENAI_API_KEY,
+    });
   
     const messages = [
     {
