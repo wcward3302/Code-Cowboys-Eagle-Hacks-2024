@@ -26,24 +26,27 @@ export default function LoginForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-2 mx-auto max-w-md mt-10 outline-black outline-double outline-offset-8 outline-1"
-    >
-      <input
-        name="email"
-        className="border border-black text-black"
-        type="email"
-        placeholder="Email"
-      />
-      <input
-        name="password"
-        className="border border-black text-black"
-        type="password"
-        placeholder="Password"
-      />
-      <button type="submit">Login</button>
-      {errorMessage && (<p style={{ textAlign: 'center', color: 'red', marginTop: '0.5rem' }}>{errorMessage}</p>)}
-    </form>
+    <div className="bg-gray-900 lg:w-6/12 md:7/12 w-8/12 shadow-3xl rounded-xl m-4">
+      <form className="p-12 md:p-24" onSubmit={handleSubmit}>
+        <p className='text-5xl m-3 text-gray-200'>Log into Account</p>
+        <div className="flex items-center text-lg mb-6 md:mb-8">
+          <input 
+          name="email"
+          type="email"
+          placeholder="Email"
+          className="bg-gray-200 rounded pl-12 py-2 md:py-4 focus:outline-none w-full" 
+          />
+        </div>
+        <div className="flex items-center text-lg mb-6 md:mb-8">
+          <input 
+            name="password"
+            type="password"
+            placeholder="Password"
+            className="bg-gray-200 rounded pl-12 py-2 md:py-4 focus:outline-none w-full" 
+          />
+          </div>
+        <button className="bg-gradient-to-b from-gray-700 to-gray-500 font-medium p-2 md:p-4 text-white uppercase w-full rounded">Login</button>
+      </form>
+    </div>
   );
 }

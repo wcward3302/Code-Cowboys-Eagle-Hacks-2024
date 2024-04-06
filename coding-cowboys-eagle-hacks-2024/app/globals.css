@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background-image: url('../public/florida-gulf-coast-university_1025.jpg');
-  object-fit: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  width: auto;
-  height: 100%;
-}
-
 .showChat {
   position: fixed; /* or absolute */
   right: 5%; /* Distance from the right */
