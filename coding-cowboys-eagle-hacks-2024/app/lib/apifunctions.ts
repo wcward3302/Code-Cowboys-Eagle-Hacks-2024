@@ -99,7 +99,7 @@ const api_stuff = async function api_call_function(needs: any, message_string: a
     }
   
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: process.env.OPENAI_API_KEY2,
     });
   
     const messages = [
