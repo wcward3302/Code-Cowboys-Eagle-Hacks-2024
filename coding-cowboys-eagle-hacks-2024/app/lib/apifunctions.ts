@@ -98,8 +98,8 @@ const api_stuff = async function api_call_function(needs: any, message_string: a
         prompt = `create an SQL statement to insert the values of ` + message_string + ` assuming we alreaady have the table created, only output an sql statement with no introduction or explanation`
     }
   
-    const openai2 = new OpenAI({
-      apiKey: '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',
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
 
     });
   
@@ -110,7 +110,7 @@ const api_stuff = async function api_call_function(needs: any, message_string: a
         } as const,
     ];
   
-      const response = await openai2.chat.completions.create({
+      const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: messages,
       });
