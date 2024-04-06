@@ -44,7 +44,7 @@ export default function ChatBox() {
       console.log(sql_insert)
 
       var html_content = await api_stuff('html', output.content)
-      html_stuff(html_content)
+      html_stuff(html_content.toString())
     }
 
     setMessages((prevMessages) => [...prevMessages, output]);
