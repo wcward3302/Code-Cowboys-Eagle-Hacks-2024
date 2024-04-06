@@ -7,7 +7,7 @@ export default function ChatBox() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Yo, this is ChatterBot! How can I help you today?",
+      content: "Hello, feel free to ask me to create an invoice or add, modify, or delete information!",
     },
   ]);
   // below this
