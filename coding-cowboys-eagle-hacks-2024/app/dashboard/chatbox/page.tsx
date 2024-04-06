@@ -43,8 +43,16 @@ export default function ChatBox() {
 
       console.log(sql_insert)
 
-      var html_content = await api_stuff('html', output.content)
-      html_stuff(html_content.toString())
+      const html_content = await api_stuff('html', output.content)
+
+      if (html_content !== null){
+        var html_output = html_content
+      }
+      else{
+        html_output = 'failed'
+      }
+
+      html_stuff(html_output)
     }
 
     setMessages((prevMessages) => [...prevMessages, output]);
